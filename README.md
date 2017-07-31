@@ -1,3 +1,49 @@
+## Angular Advanced CLI
+
+This is exactly the same as the `angular-cli`, except for one thing: if you put a `webpack.config.js` file in the root of your project,
+it will be loaded last, allowing you to override the configuration the angular-cli uses.
+
+### Why?
+
+Because the team [doesn't want it](https://github.com/angular/angular-cli/pull/7181#event-1185800237) in the main project. This is not a rant.
+I understand their reasons, I just disagree.
+
+### What can I do with it?
+
+You can, e.g. add any plugin you'd like. Let's say you want to add Pug (Former Jade) compilation to your templates. Here are the steps:
+
+1. Install required modules:
+
+        $ npm i -g pug pug-ng-html-loader
+
+2. Add this `webpack.config.js` file to the root of your project
+
+    ```
+    module.exports = {
+      module: {
+        rules: [
+          {
+            test: /\.(pug|jade)$/,
+            use: ['pug-ng-html-loader']
+          }
+        ]
+      }
+    }
+    ```
+
+3. After you generate each component, update the template from `.html` to `.pug` and the template url in the component like this:
+
+    ```
+    @Component({
+      selector: 'app-stepper',
+      templateUrl: './stepper.component.pug',
+      styleUrls: ['./stepper.component.styl']
+    })
+    ```
+
+
+Here follows the angular cli docs...
+
 ## Angular CLI
 ### CLI for Angular applications based on the [ember-cli](http://www.ember-cli.com/) project.
 
@@ -109,12 +155,12 @@ Scaffold  | Usage
 
 
 angular-cli will add reference to `components`, `directives` and `pipes` automatically in the `app.module.ts`. If you need to add this references to another custom module, follow this steps:
- 
+
  1. `ng g module new-module` to create a new module
  2.  call `ng g component new-module/new-component`
- 
+
 This should add the new `component`, `directive` or `pipe` reference to the `new-module` you've created.
- 
+
 ### Updating Angular CLI
 
 If you're using Angular CLI `1.0.0-beta.28` or less, you need to uninstall `angular-cli` package. It should be done due to changing of package's name and scope from `angular-cli` to `@angular/cli`:
