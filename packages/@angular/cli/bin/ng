@@ -94,13 +94,16 @@ if (packageJsonProjectPath && fs.existsSync(packageJsonProjectPath)) {
   const deps = packageJsonProject['dependencies'] || {};
   const devDeps = packageJsonProject['devDependencies'] || {};
   const hasOldDep = !!deps['angular-cli'];
-  const hasDep = !!deps['@angular/cli'];
+  const hasDep = !!deps['@cashfarm/angular-advanced-cli'];
   const hasOldDevDep = !!devDeps['angular-cli'];
-  const hasDevDep = !!devDeps['@angular/cli'];
+  const hasDevDep = !!devDeps['@cashfarm/angular-advanced-cli'];
+
+  const hasBasicCliDep = !!deps['@angular/cli'];
+  const hasBasicCliDevDep = !!devDeps['@angular/cli'];
 
   if (hasOldDep || hasOldDevDep || !(hasDevDep || hasDep)) {
     const warnings = [
-      'Unable to find "@angular/cli" in devDependencies.',
+      'Unable to find "@cashfarm/angular-advanced-cli" in devDependencies.',
       ''
     ];
 
@@ -119,10 +122,16 @@ if (packageJsonProjectPath && fs.existsSync(packageJsonProjectPath)) {
       warnings.push('"npm uninstall --save-dev angular-cli"');
     }
     if (hasDep) {
+      warnings.push('"npm uninstall --save @cashfarm/angular-advanced-cli"')
+    }
+    if (hasBasicCliDep) {
       warnings.push('"npm uninstall --save @angular/cli"')
     }
+    if (hasBasicCliDevDep) {
+      warnings.push('"npm uninstall --save-dev @angular/cli"')
+    }
     if (!hasDevDep) {
-      warnings.push('"npm install --save-dev @angular/cli@latest"');
+      warnings.push('"npm install --save-dev @cashfarm/angular-advanced-cli@latest"');
     }
     process.stderr.write(yellow(warnings.join('\n'), '\n\n'));
   }
