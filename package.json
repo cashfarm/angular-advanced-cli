@@ -1,9 +1,8 @@
 {
-  "name": "@angular/cli",
+  "name": "@cashfarm/advanced-angular-cli",
   "version": "1.2.6",
   "description": "CLI tool for Angular",
   "main": "packages/@angular/cli/lib/cli/index.js",
-  "trackingCode": "UA-8594346-19",
   "bin": {
     "ng": "./bin/ng"
   },
@@ -27,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular/angular-cli.git"
+    "url": "https://github.com/cashfarm/angular-advanced-cli.git"
   },
   "engines": {
     "node": ">= 6.9.0",
@@ -36,9 +35,9 @@
   "author": "Angular Authors",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/angular/angular-cli/issues"
+    "url": "https://github.com/cashfarm/angular-advanced-cli/issues"
   },
-  "homepage": "https://github.com/angular/angular-cli",
+  "homepage": "https://github.com/cashfarm/angular-advanced-cli",
   "dependencies": {
     "autoprefixer": "^6.5.3",
     "chalk": "^2.0.1",
