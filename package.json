@@ -1,5 +1,5 @@
 {
-  "name": "@cashfarm/advanced-angular-cli",
+  "name": "@cashfarm/angular-advanced-cli",
   "version": "1.2.6",
   "description": "CLI tool for Angular",
   "main": "packages/@angular/cli/lib/cli/index.js",
