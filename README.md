@@ -1,3 +1,11 @@
+# DEPRECATED
+
+The project is over and I'm not maintaing it. If you're using Angular CLI 6, you can now:
+
+    ng add ng-cli-pug-loader
+
+SOURCE: [https://medium.com/@MarkPieszak/using-pug-or-jade-templates-with-the-angular-cli-9e37334db5bc](https://medium.com/@MarkPieszak/using-pug-or-jade-templates-with-the-angular-cli-9e37334db5bc)
+
 ## Angular Advanced CLI
 
 This is exactly the same as the `angular-cli`, except for one thing: if you put a `webpack.config.js` file in the root of your project,
